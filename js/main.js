@@ -1,5 +1,7 @@
 //INIZIALIZZAZIONE COSTANTI
 const resultPrice = document.getElementById("prezzo-biglietto");
+const nameOutput = document.getElementById("nome-output");
+const offertaResult = document.getElementById("offerta");
 
 const tariffa = 0.21;
 console.log("Tariffa €" + tariffa);
@@ -11,6 +13,8 @@ const scontoOver = 40;
 console.log("Sconto Over 65 %" + scontoOver);
 
 let prezzo;
+let offerta;
+
 //INIZIALIZZAZIONE COSTANTI TRAMITE INPUT DALL'UTENTE + RELATIVI CONTROLLI
 
 const nameInput = document.querySelector("#user-name");
@@ -22,6 +26,10 @@ const ageRangeInput = document.querySelector("#age-range");
 const createButton = document.getElementById("create");
 
 createButton.addEventListener("click", function () {
+  const ticketSection = document.getElementById("ticket-section");
+
+  ticketSection.style.display = "block";
+
   const user = nameInput.value.trim();
   console.log("Nome utente: " + user);
 
@@ -37,13 +45,22 @@ createButton.addEventListener("click", function () {
     //CREAZIONE DEL PREZZO
     prezzo = tariffa * distanza;
     console.log("Prezzo lordo €" + prezzo);
+
+    offerta = "Biglietto Standard";
+    console.log(offerta);
+
     // APPLICAZIONE DEGLI SCONTI
     if (ageRange == "minorenne") {
       prezzo = prezzo - (prezzo * scontoUnder) / 100;
       console.log("Prezzo scontato €" + prezzo);
+
+      offerta = "Biglietto promo under18";
     } else if (ageRange == "over65") {
       prezzo = prezzo - (prezzo * scontoOver) / 100;
       console.log("Prezzo scontato €" + prezzo);
+
+      offerta = "Biglietto promo over65";
+      console.log(offerta);
     }
   }
 
@@ -51,6 +68,9 @@ createButton.addEventListener("click", function () {
   prezzo = prezzo.toFixed(2);
   console.log("Prezzo finale €" + prezzo);
 
-  //STAMPO IN OUTPUT IL PREZZO FINALE TRAMITE ELEMENTO HMTL
+  //STAMPO IN OUTPUT IL PREZZO FINALE, IL NOME DEL CLIENTE E LA PROMO APPLICATA TRAMITE ELEMENTO HMTL
+
   resultPrice.innerText = prezzo + "€ ";
+  nameOutput.innerText = user;
+  offertaResult.innerText = offerta;
 });

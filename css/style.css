@@ -6,3 +6,7 @@ img {
 
 :root {
 }
+
+#ticket-section {
+  display: none;
+}

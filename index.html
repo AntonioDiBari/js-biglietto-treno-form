@@ -27,14 +27,32 @@
     <link rel="stylesheet" href="./css/responsive.css" />
   </head>
   <body>
-    <header>
-      <h2
-        class="m-5 text-decoration-underline bg-warning d-inline-block"
-        id="prezzoBiglietto"
-      ></h2>
-    </header>
-    <section></section>
-    <section></section>
+    <section>
+      <h2 class="m-5 text-decoration-underline bg-warning d-inline-block"></h2>
+      <form>
+        <div>
+          <label for="">Nome</label>
+          <input type="text" id="user-name" />
+        </div>
+        <div>
+          <label for="">Km da percorrere</label>
+          <input type="text" id="distanza" />
+        </div>
+        <div>
+          <label for="">Fascia d'età</label>
+          <select id="age-range">
+            <option value="minorenne">Minorenne</option>
+            <option value="maggiorenne">Maggiorenne</option>
+            <option value="over65">Maggiorenne - Over65</option>
+          </select>
+        </div>
+        <button type="button" id="create">Genera</button>
+        <button type="reset">Annulla</button>
+      </form>
+    </section>
+    <section>
+      <p id="prezzo-biglietto"></p>
+    </section>
     <footer></footer>
     <script type="text/javascript" src="./js/main.js"></script>
     <script

@@ -26,32 +26,63 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/responsive.css" />
   </head>
-  <body>
-    <section>
-      <h2 class="m-5 text-decoration-underline bg-warning d-inline-block"></h2>
-      <form>
-        <div>
-          <label for="">Nome</label>
-          <input type="text" id="user-name" />
+  <body class="bg-info bg-gradient">
+    <h2 class="text-light text-center my-3">
+      CALCOLA IL PREZZO DEL TUO BIGLIETTO
+    </h2>
+    <section class="container bg-light">
+      <form class="row justify-content-center pb-5">
+        <div class="col-4 d-flex flex-column align-items-center">
+          <label for="" class="my-3">Nome Cognome</label>
+          <input type="text" id="user-name" class="mb-5" />
         </div>
-        <div>
-          <label for="">Km da percorrere</label>
-          <input type="text" id="distanza" />
+        <div class="col-4 d-flex flex-column align-items-center">
+          <label for="" class="my-3">Km da percorrere</label>
+          <input type="text" id="distanza" class="mb-5" />
         </div>
-        <div>
-          <label for="">Fascia d'età</label>
-          <select id="age-range">
+        <div class="col-4 d-flex flex-column align-items-center">
+          <label for="" class="my-3">Fascia d'età</label>
+          <select id="age-range" class="mb-5">
             <option value="minorenne">Minorenne</option>
             <option value="maggiorenne">Maggiorenne</option>
             <option value="over65">Maggiorenne - Over65</option>
           </select>
         </div>
-        <button type="button" id="create">Genera</button>
-        <button type="reset">Annulla</button>
+        <button type="button" id="create" class="col-1 me-3">Genera</button>
+        <button type="reset" class="col-1">Annulla</button>
       </form>
     </section>
-    <section>
-      <p id="prezzo-biglietto"></p>
+    <section class="">
+      <h2 class="text-light text-center my-3">IL TUO BIGLIETTO</h2>
+      <div class="container bg-light py-3 px-5">
+        <h3>DETTAGLIO PASSEGGERI</h3>
+        <div
+          class="row border border-0 border-top border-bottom border-secondary-subtle"
+        >
+          <div class="col-4 py-3 d-flex flex-column bg-secondary">
+            <h6>NOME PASSEGGERO</h6>
+            <!-- <span id="prezzo-biglietto" class="fw-bold">--</span> -->
+          </div>
+          <div class="col-3 py-3 d-flex flex-column justify-content-between">
+            <h6>Offerta</h6>
+            <span>Biglietto Standard</span>
+          </div>
+          <div class="col-1 py-3 d-flex flex-column justify-content-between">
+            <h6>Carrozza</h6>
+            <span>5</span>
+          </div>
+
+          <div class="col-1 py-3 d-flex flex-column justify-content-between">
+            <h6>Codice CP</h6>
+            <span>92911</span>
+          </div>
+
+          <div class="col-3 py-3 d-flex flex-column justify-content-between">
+            <h6>Costo Biglieto</h6>
+            <span id="prezzo-biglietto" class="fw-bold">--</span>
+          </div>
+        </div>
+      </div>
     </section>
     <footer></footer>
     <script type="text/javascript" src="./js/main.js"></script>

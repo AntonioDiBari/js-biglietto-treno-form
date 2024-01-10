@@ -52,5 +52,5 @@ createButton.addEventListener("click", function () {
   console.log("Prezzo finale €" + prezzo);
 
   //STAMPO IN OUTPUT IL PREZZO FINALE TRAMITE ELEMENTO HMTL
-  resultPrice.innerText = "Il prezzo del tuo biglietto è: € " + prezzo;
+  resultPrice.innerText = prezzo + "€ ";
 });
